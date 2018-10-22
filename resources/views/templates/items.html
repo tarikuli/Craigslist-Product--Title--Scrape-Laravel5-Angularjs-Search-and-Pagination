@@ -1,0 +1,37 @@
+<div class="row" style="padding-bottom: 10px;">
+    <div class="col-lg-12 margin-tb">
+
+        <div class="pull-left">
+            <button ng-click="scrape()" class="btn btn-success">Scrape Items from Craigslist</button></button>
+        </div>
+
+        <div class="pull-right">
+            <div class="box-tools" style="display:inline-table">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm ng-valid ng-dirty" placeholder="Search" ng-change="searchDB()" ng-model="searchText"
+                        name="table_search" title="" tooltip="" data-original-title="Min character length is 3">
+                    <span class="input-group-addon">Search</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered pagin-table">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Prices</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr dir-paginate="value in data | itemsPerPage:120" total-items="totalItems">
+            <td>{{ value.id }}</td>
+            <td>{{ value.title }}</td>
+            <td>{{ value.price }}</td>
+        </tr>
+    </tbody>
+</table>
+<dir-pagination-controls class="pull-right" on-page-change="pageChanged(newPageNumber)" template-url="templates/dirPagination.html"></dir-pagination-controls>
