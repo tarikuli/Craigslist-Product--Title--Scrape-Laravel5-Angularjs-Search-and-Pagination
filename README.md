@@ -35,7 +35,7 @@ https://github.com/tarikuli/Craigslist-Product-Title-Scrape-Laravel5-Angularjs-S
 </pre>
 <br>
 
-<h1>destroy function used for<h1> 
+<h1>destroy function used for</h1> 
 -- Step 1: Truncate exist data from item Table.<br>
 -- Step 2: Craigslist Show 120 items in a page so loop for 1000 items<br> 
 -- Step 3: Curl & Parse Items titel and value using PHP  DOMDocument class and Curl Function<br>
@@ -86,5 +86,16 @@ https://github.com/tarikuli/Craigslist-Product-Title-Scrape-Laravel5-Angularjs-S
     }
 <pre>
 
-## AWS architecture
+<h1> AWS architecture.</h1> 
+        1) Load Blancer ( Http request )<br>
+        2) 2 EC2 Insntance ( Apache server + Redis )<br> 
+        3) Amazon Aurora (MySql DB)<br>
+        4) EFS for (Media, image File stroge)<br>
+        5) CloudFront Distributions for (Media, image, JS and CSS) static files Speed up<br> 
+
+
+
+
+
+
 
